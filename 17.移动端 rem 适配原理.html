@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移动端 rem 适配原理</title>
+    <style>
+        /* html{
+        font-size: 20px;
+       }
+  */
+        .box-px{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            margin-bottom: 50px;
+        }
+
+        .box-rem{
+            width: 10rem;
+            height: 8rem;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <div class="box-px"></div>
+
+    <div class="box-rem"></div>
+
+    <script>
+        // 根据设备宽度动态设置 html 标签的 font-size 值，设备宽度 / 10
+        function setRemUnit() {
+            const docEl = document.documentElement;
+            const screenWidth = docEl.clientWidth;
+            if (!screenWidth) return;
+            docEl.style.fontSize = screenWidth / 10 + 'px';
+        }
+
+    </script>
+</body>
+</html>

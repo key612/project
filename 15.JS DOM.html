@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM</title>
+</head>
+
+
+<body>
+    <div id="box1">这是一个ID选择器标签</div>
+    <div class="box2">这是一个类选择器标签</div>
+    <div>普通div标签</div>
+    
+    <button>点击按钮</button>
+    <script>
+        // 通过ID选择器获取元素
+        var box1 = document.getElementById("box1");
+        console.log(box1); // 输出获取到的元素   
+        
+
+        // 通过类选择器获取元素
+        var box2 = document.getElementsByClassName("box2")[0];
+        console.log(box2); // 输出获取到的元素
+        
+        // 通过标签名获取元素
+        var divs = document.getElementsByTagName("div")[2];
+        console.log(divs); // 输出获取到的元素集合
+
+        // 修改文本内容
+        box1.innerHTML = '<a href="#">跳转链接</a>';
+        box2.innerText = '<a href="#">跳转链接</a>';
+
+        // 修改样式
+        divs.style.color = "red";
+        divs.style.fontSize = "20px";
+
+        // DOM 事件绑定
+        var button = document.getElementsByTagName("button")[0];
+        console.log(button);
+
+        button.addEventListener("click", function() {
+            alert("通过addEventListener 触发的点击事件");
+        });
+
+        // DOM 对象常用方法
+        console.log("获取子节点", box1.childNodes); // 获取子节点
+        console.log("获取父节点", box1.parentNode); // 获取父节点
+        console.log("获取兄弟节点", box1.nextSibling); // 获取兄弟节点
+
+        // 创建新元素并添加到页面
+        var newDiv = document.createElement("div");
+        newDiv.innerText = "我是新创建的div元素";
+        document.body.appendChild(newDiv);
+    </script>
+</body>
+</html>

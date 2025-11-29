@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 选择器</title>
+    <style>
+    /* 元素选择器 */
+    h2 {
+        color: blue;
+    }
+    /* 类选择器 */
+    .hightlight {
+        background-color: yellow;
+    }
+    /* ID 选择器 */
+    #header {
+        font-size: 24px;
+        color: green;
+    }
+    /* 通用选择器 */
+    * {
+        font-family: 'kaiTi';
+        font-weight: bolder;
+    }
+    /* 子选择器 */
+    .father > .son {
+        color: yellowgreen;
+    }
+    /* 后代选择器 */
+    .father p {
+        color: orange;
+        font-size: larger;
+    }
+    /* 兄弟选择器 */
+    h3 + p {
+        background: red;
+        font-size: 20px;
+    }
+    /* 伪类选择器 */
+    #element:hover {
+        background: purple;
+        font-size: 30px;
+    }
+    /* 
+    选中第一个子元素 :first-child
+                    :nth-child(n)
+                    :active     
+     */
+
+    /* 伪元素选择器
+       ::after
+       ::before     
+    */
+
+</style>
+</head>
+
+<body>
+    <h1>不同类型的CSS 选择器</h1>
+    <h2>元素选择器</h2>
+    <p>CSS 选择器用于选择 HTML 元素，以便对其应用样式。常见的选择器类型包括：</p>
+    
+    <h3 class="hightlight">这是一个类选择器实例</h3>
+    <h3>这是另一个类选择器实例</h3>
+
+    <h4 id="header">ID 选择器</h4>
+
+    <div class="father">
+        <p class="son">子选择器</p>
+        <div>
+           <p class="grandson">后代选择器</p> 
+        </div>
+    </div>
+
+    <p>这是一个普通 p 标签</p>
+    <h3>兄弟选择器</h3>
+    <p>这是另一个普通 p 标签</p>
+
+    <h3 id="element">伪类选择器</h3>
+
+</body>
+</html>

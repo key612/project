@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 函数</title>
+</head>
+<body>
+    <script>
+        // 函数实例
+        // 无参数无返回值
+        function hello() {
+            console.log("Hello, World!");
+        }
+        hello(); // 输出: Hello, World!
+
+        // 无参数有返回值
+        function hello_with_return() {
+            return "Hello, World with Return!";
+        }
+        console.log(hello_with_return()); // 输出: Hello, World with Return!
+
+        // 有参数无返回值
+        function hello_with_params(name) {
+            console.log("Hello, " + name + "!");
+        }
+        hello_with_params("Alice"); // 输出: Hello, Alice!
+        hello_with_params("Bob");   // 输出: Hello, Bob!
+
+        // 有参数有返回值
+        function greet(name) {
+            return "Greetings, " + name + "!";
+        }  
+        console.log(greet("Charlie")); // 输出: Greetings, Charlie!
+
+        // 作用域
+        let globalVar = "I am a global variable";
+        function localvar_function(){
+            let localVar = "I am a local variable";
+            console.log('函数内打印全局变量:' +globalVar); // 可以访问全局变量
+            console.log('函数内打印局部变量:' +localVar);  // 可以访问局部变量
+        }
+        localvar_function();
+        console.log('全局打印全局变量:' +globalVar); // 可以访问全局变量
+        // console.log('全局打印局部变量:' +localVar); // 报错: localVar 未定义
+
+
+    </script>
+</body>
+</html>

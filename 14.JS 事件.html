@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS 事件</title>
+</head>
+<body>
+   <!-- 14.JS 事件 -->
+    <button onclick="click_event">这是一个事件按钮</button>
+    <input type="text" onfocus="focus_event()" onblur="blur_event()">
+
+    <script>
+        // 点击事件
+        function click_event() {
+            alert("按钮被点击了！");
+        }
+
+        // 获取按钮元素
+        const button = document.querySelector("button");
+
+        // 为按钮添加点击事件监听器
+        button.addEventListener("click", click_event);
+
+        // 聚焦事件
+        function focus_event() {
+            console.log("输入框获得焦点");
+        }
+
+        // 失去焦点事件
+        function blur_event() {
+            console.log("输入框失去焦点");
+        }
+
+        // 其他常见事件示例
+        // 鼠标悬停事件
+        button.addEventListener("mouseover", function() {
+            console.log("鼠标悬停在按钮上");
+        });
+
+        // 键盘按下事件
+        document.addEventListener("keydown", function(event) {
+            console.log("按下了键：" + event.key);
+        });
+    
+    </script>
+</body>
+</html>
